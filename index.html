@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<style>
+        thead{
+                background-color: rgb(242,242,242);
+                width: 100%;
+        }
+        table{
+                margin-top: 10px;
+                width: 100%;
+                
+        }
+        #page{
+                text-align: center;
+        }
+        td{
+                border-bottom: 1px solid black;
+                padding: 10px;
+        }
+        #page>button{
+               background-color: rgb(242,242,242);
+               border:1px solid black;
+               padding: 10px;
+               margin: 10px;
+               
+        }
+</style>
+<body>
+      <nav>
+        <h1 style="text-align: center;">Employee Management System</h1>
+        <div>
+                <label for="">Filter by Department: </label>
+                <select name="" id="department" onchange="filterdatabydepartment()">
+                        <option value="">--Select Department--</option>
+                        <option value="&filterBy=department&filterValue=hr">HR</option>
+                        <option value="&filterBy=department&filterValue=finance">Finance</option>
+                        <option value="&filterBy=department&filterValue=marketing">Marketing</option>
+                        <option value="&filterBy=department&filterValue=engineering">Engineering</option>
+                        <option value="&filterBy=department&filterValue=operations">Operations</option>
+                </select>
+
+                <label for="">Filter by Gender: </label>
+                <select name="" id="gender" onchange="filterdatabygender()">
+                        <option value="">--Gender--</option>
+                        <option value="&filterBy=gender&filterValue=male">Male</option>
+                        <option value="&filterBy=gender&filterValue=female">Female</option>
+                </select>
+
+                <label for="">Sort by Salary: </label>
+                <select name="" id="salary" onchange="sortdata()">
+                        <option value="">--Salary--</option>
+                        <option value="&sort=salary&order=asc">Low to High</option>
+                        <option value="&sort=salary&order=desc">High to Low</option>
+                </select>
+        </div>
+      </nav> 
+      <div>
+        <table>
+                <thead>
+                        <tr>
+                                <th>S.no</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Department</th>
+                                <th>Salary</th>
+                        </tr>
+                </thead>
+                <tbody id="empdata">
+
+                </tbody>
+        </table>
+      </div>
+      <div id="page">
+        <button onclick="previous()" id="prv">Previous</button>
+        <button onclick="next()" id="nxt">Next</button>
+      </div>
+
+</body>
+<script src="./index.js"></script>
+</html>
